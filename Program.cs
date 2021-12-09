@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
@@ -11,7 +11,7 @@ namespace StickyMemos
 		[STAThreadAttribute]
 		public static void Main()
 		{
-			string AppName = Assembly.GetExecutingAssembly().GetName.Name;
+			string AppName = Assembly.GetExecutingAssembly().GetName().Name;
 			bool IsCreate;
 			Mutex mutex = new Mutex(true, AppName, out IsCreate);
 			if (IsCreate)
