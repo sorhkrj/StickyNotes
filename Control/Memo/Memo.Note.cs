@@ -130,7 +130,7 @@ namespace StickyMemos
 
         private void Note_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Right)
             {
                 this.NoteMenuStrip.Show(MousePosition);
             }
