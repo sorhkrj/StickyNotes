@@ -65,7 +65,7 @@ namespace StickyMemos
                         string[] item = value.Split(',');
                         int index = 0;
                         string name = item[index++];
-                        if (!File.Exists(string.Format(@"{0}/{1}", directory, name))) { continue; }
+                        if (!File.Exists(string.Format(@"{0}\{1}", directory, name))) { continue; }
                         string color = item[index++];
                         int x = int.Parse(item[index++]);
                         int y = int.Parse(item[index++]);
@@ -92,8 +92,8 @@ namespace StickyMemos
                         Point point = this.list[data].point ?? new Point(0, 0);
                         Size size = this.list[data].size;
 
-                        streamWriter.Write(string.Format("{0},{1}", name, color));
-                        streamWriter.Write(string.Format("{0},{1}", point.X, point.Y));
+                        streamWriter.Write(string.Format("{0},{1},", name, color));
+                        streamWriter.Write(string.Format("{0},{1},", point.X, point.Y));
                         streamWriter.Write(string.Format("{0},{1}", size.Width, size.Height));
                         streamWriter.WriteLine();
                     }

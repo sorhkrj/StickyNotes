@@ -98,12 +98,12 @@ namespace StickyMemos
                     Owner = this,
                     Name = data.name,
                     ColorName = data.color,
-                    Location = (data == null) ? Location : new Point(0, 0),
+                    Location = (data.point != null) ? data.point.Value : new Point(0, 0),
                     Size = data.size
                 };
-                if (data.point != null)
+                if (memo.Location == null)
                 {
-                    memo.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+                    memo.StartPosition = FormStartPosition.Manual;
                 }
 
                 memo.Add += new Action<string>(this.Add);
